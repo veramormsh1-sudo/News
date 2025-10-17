@@ -1,6 +1,5 @@
 import React from 'react';
 import { Header } from './Header';
-import { FeedbackTab } from '../ui/common';
 
 interface LayoutProps {
   children: React.ReactNode;
