@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import logoImage from '../../assets/logo.png';
+import img3 from '../../assets/images/img3.png';
 
 const generateRandomNews = () => {
   const newsPool = [
@@ -93,160 +95,339 @@ const ArticlePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50" style={{ 
+      fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+      fontSize: '16px',
+      fontWeight: '400',
+      lineHeight: '1.5'
+    }}>
       {/* Main Article Container */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
-        <nav className="text-sm text-gray-500 mb-4">
-          <a href="/" className="hover:text-gray-700">Home</a>
+        <nav style={{ 
+          fontSize: '14px',
+          color: '#404040',
+          marginBottom: '16px',
+          fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+        }}>
+          <a href="https://www.reuters.com/" style={{ color: '#404040' }} className="hover:text-gray-600 transition-colors">Home</a>
           <span className="mx-2">›</span>
-          <a href="/business" className="hover:text-gray-700">Business</a>
+          <a href="https://www.reuters.com/site-search/?query=crime" style={{ color: '#404040' }} className="hover:text-gray-600 transition-colors">Crime</a>
           <span className="mx-2">›</span>
-          <span>Energy</span>
+          <span style={{ color: '#666666' }}>Missing Person</span>
         </nav>
 
         {/* Article Header */}
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-4">
-            US, UK ramp up pressure on India, China to cut Russian oil imports
+        <header className="mb-12">
+          <h1 className="leading-tight mb-6" style={{ 
+            fontSize: '32px',
+            fontWeight: '700',
+            color: '#1a1a1a',
+            lineHeight: '1.2',
+            fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+          }}>
+            FATHER VANISHED. BETWEEN INSTAGRAM AND ONLYFANS, SHE HID THE TRUTH.
           </h1>
           
           {/* Meta Info */}
-          <div className="flex items-center text-sm text-gray-500 mb-6">
-            <span>By Reuters Staff</span>
+          <div className="flex items-center mb-8" style={{ 
+            fontSize: '14px',
+            color: '#404040',
+            fontWeight: '400',
+            fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+          }}>
+            <span>By Austin PD Press Office</span>
             <span className="mx-2">•</span>
-            <time dateTime="2024-10-16">October 16, 2024</time>
+            <time dateTime="2025-10-21">October 21, 2025</time>
             <span className="mx-2">•</span>
-            <span>3 min read</span>
+            <span>Updated 14:35 CST</span>
+            <span className="mx-2">•</span>
+            <span style={{ color: '#d64000', fontWeight: '500' }}>ACTIVE INVESTIGATION</span>
           </div>
 
           {/* Social Share Buttons */}
-          <div className="flex items-center space-x-4 mb-6">
-            <button className="flex items-center space-x-2 px-3 py-1 bg-blue-600 text-white rounded text-sm hover:bg-blue-700">
-              <span>Share</span>
+          <div className="flex items-center space-x-3 mb-8">
+            <button className="flex items-center justify-center p-3 text-white rounded-full transition-colors" style={{ backgroundColor: '#2d2d2d' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#404040'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2d2d2d'}>
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path>
+              </svg>
             </button>
-            <button className="flex items-center space-x-2 px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-50">
-              <span>Save</span>
+            <button className="flex items-center justify-center p-3 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors">
+              <svg className="w-5 h-5" style={{ color: '#404040' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+              </svg>
             </button>
-            <button className="flex items-center space-x-2 px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-50">
-              <span>Print</span>
+            <button className="flex items-center justify-center p-3 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors">
+              <svg className="w-5 h-5" style={{ color: '#404040' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+              </svg>
             </button>
           </div>
         </header>
 
         {/* Main Article Content */}
         <article>
-          {/* Featured Image */}
+          {/* Featured Images Gallery */}
           <figure className="mb-8">
-            <img 
-              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-              alt="Oil pumps operate at an oil field"
-              className="w-full h-auto rounded"
-            />
-            <figcaption className="text-sm text-gray-600 mt-2">
-              Oil pumps operate at an oil field in Russia. REUTERS/Sergei Karpukhin
-            </figcaption>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Main Image */}
+              <div className="md:col-span-1">
+                <img 
+                  src="/src/assets/images/photo_2025-10-21_20-53-00.jpg"
+                  alt="Evidence photo from the Nyxen family residence"
+                  className="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                  // onClick={() => window.open('/src/assets/images/photo_2025-10-21_20-53-00.jpg', '_blank')}
+                />
+              </div>
+              
+              {/* Secondary Image */}
+              <div className="md:col-span-1">
+                <img 
+                  src="/src/assets/images/img2.png"
+                  alt="Digital forensics analysis of social media activity"
+                  className="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                  // onClick={() => window.open('/src/assets/images/image_2025-10-19_21-13-13.png', '_blank')}
+                />
+              </div>
+            </div>
+            
+            {/* Image Counter */}
+            <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
+              <span className="text-xs text-gray-500 font-medium">Evidence Photos (2)</span>
+              <span className="text-xs text-gray-500">Part of ongoing investigation</span>
+            </div>
           </figure>
 
           {/* Article Summary Points */}
-          <div className="bg-gray-50 p-6 rounded mb-8">
-            <h3 className="font-bold text-gray-900 mb-4">Summary</h3>
-            <ul className="space-y-2 text-sm">
+          <div className="bg-white border-l-4 p-6 rounded mb-12" style={{ borderLeftColor: '#2d2d2d' }}>
+            <h3 className="font-bold mb-4" style={{ color: '#2d2d2d', fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>OFFICIAL INVESTIGATION ALERT</h3>
+            <ul className="space-y-3 text-sm">
               <li className="flex items-start">
-                <span className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                <span>Western nations increase diplomatic pressure on major oil importers</span>
+                <span className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#2d2d2d' }}></span>
+                <span style={{ color: '#404040', fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>Missing person case involving systematic digital evidence concealment</span>
               </li>
               <li className="flex items-start">
-                <span className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                <span>India and China remain largest buyers of discounted Russian crude</span>
+                <span className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#2d2d2d' }}></span>
+                <span style={{ color: '#404040', fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>Cross-platform social media activity under investigation</span>
               </li>
               <li className="flex items-start">
-                <span className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                <span>New sanctions package targets oil transportation infrastructure</span>
+                <span className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#2d2d2d' }}></span>
+                <span style={{ color: '#404040', fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>Critical evidence located on restricted paid platforms</span>
               </li>
               <li className="flex items-start">
-                <span className="w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                <span>Energy markets brace for potential supply disruptions</span>
+                <span className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#2d2d2d' }}></span>
+                <span style={{ color: '#404040', fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>Public cooperation requested in ongoing investigation</span>
               </li>
             </ul>
           </div>
 
           {/* Article Text */}
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg leading-relaxed mb-6">
-              WASHINGTON/LONDON, Oct 16 (Reuters) - The United States and United Kingdom are intensifying diplomatic efforts to convince India and China to reduce their imports of Russian oil, as Western nations seek to further isolate Moscow's energy sector amid ongoing geopolitical tensions.
+          <div className="max-w-none">
+            <p style={{
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontSize: '18px',
+              lineHeight: '1.4',
+              fontWeight: '500',
+              color: '#333333',
+              margin: '0 0 12px 0',
+              display: 'block',
+              fontStyle: 'normal'
+            }}>
+              Official Statement Regarding the Disappearance of Michael Nyxen and the Subsequent Digital Activity of His Daughter, Vera Nyxen.
             </p>
 
-            <p className="mb-6">
-              Senior officials from both countries have engaged in high-level discussions with their counterparts in New Delhi and Beijing, emphasizing the strategic importance of reducing dependence on Russian energy exports, according to sources familiar with the matter.
+            <p style={{
+              marginBottom: '32px',
+              color: '#404040',
+              lineHeight: '1.6',
+              fontSize: '16px',
+              fontWeight: '400',
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}>
+              As part of the ongoing investigation into the disappearance of Michael Nyxen, a resident of Austin, Texas, it has been established that his daughter, Vera Nyxen, has engaged in systematic activity on social media platforms that is of operational interest.
             </p>
 
-            <div className="bg-orange-50 border-l-4 border-orange-600 p-4 my-8">
-              <p className="text-sm italic">
-                "The pressure being exerted encompasses both economic incentives and potential consequences for continued engagement with Russian energy infrastructure," said one diplomatic source.
-              </p>
+            <h2 style={{
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontSize: '18px',
+              lineHeight: '1.4',
+              fontWeight: '500',
+              color: '#333333',
+              margin: '24px 0 12px 0',
+              display: 'block',
+              fontStyle: 'normal',
+              textTransform: 'none'
+            }}>Content Status and Accessibility</h2>
+            
+            <p style={{
+              marginBottom: '24px',
+              color: '#404040',
+              lineHeight: '1.6',
+              fontSize: '16px',
+              fontWeight: '400',
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}>
+              In the 72 hours preceding the official missing person's report, Ms. Nyxen began publishing a series of posts with an encoded character on her Instagram account (@itsveranyx). These include:
+            </p>
+
+            <ul style={{
+              listStyleType: 'disc',
+              paddingLeft: '24px',
+              marginBottom: '24px',
+              color: '#404040',
+              fontSize: '16px',
+              lineHeight: '1.6',
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}>
+              <li style={{ marginBottom: '8px' }}>Static images of items connected to the family's previous place of residence (a key, framed photographs).</li>
+              <li style={{ marginBottom: '8px' }}>Quotations from literary works with pronounced criminal undertones.</li>
+              <li style={{ marginBottom: '8px' }}>The use of metaphorical hashtags (#dust_of_the_past, #key_to_silence).</li>
+            </ul>
+
+            <p style={{
+              marginBottom: '32px',
+              color: '#404040',
+              lineHeight: '1.6',
+              fontSize: '16px',
+              fontWeight: '400',
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}>
+              These publications were initially perceived by a segment of her audience as an art project. However, subsequent analysis has revealed their synchronization with content posted on the paid platform, OnlyFans.
+            </p>
+
+            <h2 style={{
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontSize: '18px',
+              lineHeight: '1.4',
+              fontWeight: '500',
+              color: '#333333',
+              margin: '24px 0 12px 0',
+              display: 'block',
+              fontStyle: 'normal',
+              textTransform: 'none'
+            }}>Official Request</h2>
+            
+            <p style={{
+              marginBottom: '24px',
+              color: '#404040',
+              lineHeight: '1.6',
+              fontSize: '16px',
+              fontWeight: '400',
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}>
+              A direct correlation has been documented between the Instagram posts and materials on Vera Nyxen's OnlyFans page. Each 'neutral' post on Instagram corresponded with a private video on OnlyFans, depicting the same location but with elements suggesting preparation or the concealment of information (packing belongings, destroying documents, filming hidden compartments).
+            </p>
+
+            <div className="bg-gray-100 p-4 rounded mb-6 border-l-4 border-gray-400">
+              <h4 style={{ 
+                fontWeight: '600', 
+                color: '#2d2d2d', 
+                marginBottom: '12px',
+                fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+              }}>Documented Pattern Examples:</h4>
+              <ul style={{ 
+                fontSize: '14px', 
+                color: '#404040', 
+                lineHeight: '1.5',
+                fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+              }}>
+                <li style={{ marginBottom: '4px' }}>• Instagram post of vintage key → OnlyFans video showing same key opening father's office desk</li>
+                <li style={{ marginBottom: '4px' }}>• Instagram quote about "buried secrets" → OnlyFans content filmed in family basement</li>
+                <li style={{ marginBottom: '4px' }}>• Instagram photo of family portrait → OnlyFans video showing removal of items from frame backing</li>
+                <li style={{ marginBottom: '4px' }}>• Instagram hashtag #last_goodbye → OnlyFans video allegedly filmed in father's bedroom on day of disappearance</li>
+              </ul>
             </div>
 
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Economic Implications</h2>
-            
-            <p className="mb-6">
-              India and China have emerged as the largest purchasers of Russian crude oil, taking advantage of significant discounts offered as Moscow seeks alternative markets following Western sanctions. The two Asian giants have increased their Russian oil imports by more than 300% since early 2022.
-            </p>
-
-            <p className="mb-6">
-              Energy analysts warn that any significant reduction in these imports could lead to supply shortages and price volatility in global oil markets, potentially affecting consumers worldwide.
-            </p>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Strategic Considerations</h2>
-            
-            <p className="mb-6">
-              The diplomatic push comes as Western nations prepare a new package of sanctions targeting Russia's oil transportation infrastructure, including tankers and insurance companies that facilitate crude exports.
-            </p>
-
-            <p className="mb-6">
-              "This coordinated approach represents a significant escalation in efforts to constrain Russia's energy revenues," said Dr. Sarah Mitchell, an energy policy expert at the Atlantic Council.
-            </p>
-
-            {/* Chart/Graph Placeholder */}
-            <figure className="my-8 bg-gray-900 p-6 rounded">
+            {/* Evidence Image */}
+            <figure className="mb-8">
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Oil price chart showing market trends"
-                className="w-full h-48 object-cover rounded"
+                src={img3}
+                alt="Digital evidence correlation analysis"
+                className="w-full rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                style={{ display: 'block' }}
               />
-              <figcaption className="text-sm text-gray-300 mt-2">
-                Oil price trends and import volumes from major suppliers over the past 12 months
+              <figcaption className="text-sm text-gray-600 text-center mt-3 italic" style={{
+                fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+              }}>
               </figcaption>
             </figure>
 
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Market Response</h2>
+            <h2 style={{
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontSize: '18px',
+              lineHeight: '1.4',
+              fontWeight: '500',
+              color: '#333333',
+              margin: '24px 0 12px 0',
+              display: 'block',
+              fontStyle: 'normal',
+              textTransform: 'none'
+            }}>Chronology of Digital Activity</h2>
             
-            <p className="mb-6">
-              Global oil prices have remained volatile amid speculation about potential supply disruptions. Brent crude futures have fluctuated between $85-92 per barrel over the past week, with traders closely monitoring diplomatic developments.
+            <p style={{
+              marginBottom: '24px',
+              color: '#404040',
+              lineHeight: '1.6',
+              fontSize: '16px',
+              fontWeight: '400',
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}>
+              The Instagram account @itsveranyx is currently undergoing a systematic purge of the aforementioned materials. A complete archive of its state from the period immediately preceding the disappearance is currently accessible only to a limited number of individuals.
             </p>
 
-            <p className="mb-6">
-              Industry executives expect continued uncertainty as negotiations progress, with some companies already exploring alternative supply arrangements to mitigate potential risks.
-            </p>
+            <div className="bg-yellow-50 border-l-4 p-6 my-8" style={{ borderLeftColor: '#d64000' }}>
 
-            <div className="bg-blue-50 border border-blue-200 rounded p-6 mt-8">
-              <h3 className="font-bold text-blue-900 mb-2">Related Coverage</h3>
-              <ul className="space-y-2 text-sm text-blue-800">
-                <li><a href="#" className="hover:underline">Analysis: How oil sanctions reshape global energy trade</a></li>
-                <li><a href="#" className="hover:underline">Exclusive: India's refiners adapt to changing supply chains</a></li>
-                <li><a href="#" className="hover:underline">China's energy security strategy under scrutiny</a></li>
-              </ul>
+              <p style={{ 
+                fontSize: '14px', 
+                color: '#404040',
+                fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+              }}>
+                Key evidence, including unedited photographs, video recordings with audio commentary, and documents potentially relevant to the case, were posted by Vera Nyxen exclusively on her OnlyFans page. Access to these materials is restricted by a paid subscription.
+              </p>
             </div>
+
+            <h2 style={{
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+              fontSize: '18px',
+              lineHeight: '1.4',
+              fontWeight: '500',
+              color: '#333333',
+              margin: '24px 0 12px 0',
+              display: 'block',
+              fontStyle: 'normal',
+              textTransform: 'none'
+            }}>Cross-Platform Correlation</h2>
+            
+            <p style={{
+              marginBottom: '24px',
+              color: '#404040',
+              lineHeight: '1.6',
+              fontSize: '16px',
+              fontWeight: '400',
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}>
+              Individuals possessing any information related to this case, as well as those with access to the full archive of Vera Nyxen's digital activity (including materials from the OnlyFans platform), are urged to contact law enforcement authorities. Any detail that may seem insignificant on Instagram may gain critical importance when cross-referenced with materials from her paid page.
+            </p>
+
+            <p style={{
+              marginBottom: '24px',
+              fontSize: '14px',
+              color: '#666666',
+              fontStyle: 'italic',
+              fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}>
+              <strong>Note:</strong> Several subscribers have reported that recent OnlyFans content includes locations and timestamps that correlate with the last known movements of Michael Nyxen. Some videos allegedly show Vera handling personal items belonging to her father, including his wallet and keys.
+            </p>
           </div>
 
           {/* Article Tags */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <h3 className="text-sm font-medium text-gray-700 mb-3">Topics:</h3>
-            <div className="flex flex-wrap gap-2">
-              {['Oil', 'Energy', 'Russia', 'India', 'China', 'Sanctions', 'Diplomacy'].map((tag) => (
+          <div className="mt-16 pt-8 border-t border-gray-200">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">Topics:</h3>
+            <div className="flex flex-wrap gap-3">
+              {['Missing Person', 'Investigation', 'Digital Evidence', 'Social Media', 'OnlyFans', 'Instagram', 'Austin', 'Law Enforcement'].map((tag) => (
                 <span 
                   key={tag}
-                  className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 cursor-pointer"
+                  className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm rounded-full hover:border-gray-400 transition-colors cursor-pointer"
                 >
                   {tag}
                 </span>
@@ -256,15 +437,15 @@ const ArticlePage: React.FC = () => {
         </article>
 
         {/* Author Info */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
+        <div className="mt-16 pt-8 border-t border-gray-200">
           <div className="flex items-start space-x-4">
-            <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-              <span className="text-gray-600 font-medium">RS</span>
+            <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#2d2d2d' }}>
+              <span className="text-white font-medium" style={{ fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>LE</span>
             </div>
             <div>
-              <h3 className="font-medium text-gray-900">Reuters Staff</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Our Standards: <a href="#" className="text-blue-600 hover:underline">The Thomson Reuters Trust Principles.</a>
+              <h3 className="font-medium" style={{ color: '#2d2d2d', fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>Law Enforcement Agency</h3>
+              <p className="text-sm mt-1" style={{ color: '#404040', fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>
+                Official statement. For tips or information: <a href="#" className="hover:underline" style={{ color: '#d64000' }}>Contact Investigation Team</a>
               </p>
             </div>
           </div>
@@ -284,12 +465,29 @@ const ArticlePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedNews.map((article, index) => (
               <article key={`${article.title}-${index}`} className="group cursor-pointer">
-                <div className="aspect-video mb-3 relative overflow-hidden rounded">
-                  <img 
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                <div className="aspect-video mb-3 relative overflow-hidden rounded bg-gray-100 flex items-center justify-center">
+                  {article.image ? (
+                    <img 
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          parent.innerHTML = `
+                            <div class="flex items-center justify-center w-full h-full bg-gray-100">
+                              <img src="${logoImage}" alt="Reuters Logo" class="w-24 h-auto opacity-60" />
+                            </div>
+                          `;
+                        }
+                      }}
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center w-full h-full bg-gray-100">
+                      <img src={logoImage} alt="Reuters Logo" className="w-24 h-auto opacity-60" />
+                    </div>
+                  )}
                   <div className="absolute top-2 left-2">
                     <span className="px-2 py-1 bg-orange-600 text-white text-xs font-medium rounded">
                       {article.category}
