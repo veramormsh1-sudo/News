@@ -93,7 +93,7 @@ const ArticlePage: React.FC = () => {
 
     return () => clearInterval(interval);
   }, []);
-
+ 
   return (
     <div className="min-h-screen bg-gray-50" style={{ 
       fontFamily: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
