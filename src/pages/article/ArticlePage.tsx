@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import logoImage from '../../assets/logo.png';
 import img3 from '../../assets/images/img3.png';
+import img1 from '../../assets/images/photo_2025-10-21_20-53-00.jpg';
+import img2 from '../../assets/images/img2.png';
 
 const generateRandomNews = () => {
   const newsPool = [
@@ -173,7 +175,7 @@ const ArticlePage: React.FC = () => {
               {/* Main Image */}
               <div className="md:col-span-1">
                 <img 
-                  src="/src/assets/images/photo_2025-10-21_20-53-00.jpg"
+                  src={img1}
                   alt="Evidence photo from the Nyxen family residence"
                   className="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                   // onClick={() => window.open('/src/assets/images/photo_2025-10-21_20-53-00.jpg', '_blank')}
@@ -183,7 +185,7 @@ const ArticlePage: React.FC = () => {
               {/* Secondary Image */}
               <div className="md:col-span-1">
                 <img 
-                  src="/src/assets/images/img2.png"
+                  src={img2}
                   alt="Digital forensics analysis of social media activity"
                   className="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                   // onClick={() => window.open('/src/assets/images/image_2025-10-19_21-13-13.png', '_blank')}
